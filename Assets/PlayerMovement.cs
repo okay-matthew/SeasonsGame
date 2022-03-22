@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb; 
     private Animator am;
     private SpriteRenderer sprite;
+
+    public List<string> orbsList;
+    public int orbCount;
+    public Text orbText;
+
 
     private float x_dir = 0;
     private bool grounded;
@@ -22,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // grabs the rigid body of the player, which allows it to collide with the ground
         am = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+
+        // list that holds each orb name
+        orbsList = new List<string>();
+        // text on the screen about # of orbs collected
+        orbText.text = "Orbs Collected: " + orbCount.ToString() + "/3";
     }
 
     // Update is called once per frame
@@ -35,8 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump")) {
             // Debug.Log("hello");
             rb.AddForce(new Vector2(0f, jump_force));
-            // rb.velocity = new Vector2(rb.velocity.x, jump_force);
-            
+            rb.velocity = new Vector2(rb.velocity.x, jump_force);
         }
 
         UpdatePlayerAnimation();
@@ -70,5 +80,17 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(state);
 
         am.SetInteger("state", (int)state);
+    }
+
+    // handles collisions
+     private void OnTriggerEnter2D(Collider2D collision) {
+         // if the player touches the orb, get the name of the orb, add it to the list, increment orbCount, delete the orb
+       if(collision.CompareTag("Orb Collectable")) {
+            string orbName = collision.gameObject.GetComponent<OrbScript>().orbName;
+            orbsList.Add(orbName);
+            orbCount = orbsList.Count;
+            orbText.text = "Orbs collected: "+ orbCount.ToString() + "/3";
+            Destroy(collision.gameObject);
+        }
     }
 }
