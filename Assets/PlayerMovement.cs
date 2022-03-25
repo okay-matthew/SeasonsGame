@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump")) {
             // Debug.Log("hello");
             rb.AddForce(new Vector2(0f, jump_force));
-            rb.velocity = new Vector2(rb.velocity.x, jump_force);
+            // rb.velocity = new Vector2(rb.velocity.x, jump_force);
         }
 
         UpdatePlayerAnimation();
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             string orbName = collision.gameObject.GetComponent<OrbScript>().orbName;
             orbsList.Add(orbName);
             orbCount = orbsList.Count;
-            orbText.text = "Orbs collected: "+ orbCount.ToString() + "/3";
+            orbText.text = "Orbs collected: "+ orbCount.ToString() + "/3"; 
             Destroy(collision.gameObject);
         }
     }

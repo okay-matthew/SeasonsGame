@@ -4387,7 +4387,7 @@ MonoBehaviour:
   orbCount: 0
   orbText: {fileID: 256330968}
   move_speed: 4
-  jump_force: 5
+  jump_force: 400
 --- !u!95 &1138677462
 Animator:
   serializedVersion: 3
