@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: tilemapped_128
+  m_Name: wintegrasstile2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 6062762359153755406, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  m_Sprite: {fileID: 7922319112748980109, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerState.falling; //TODO: Must have 'ground' check to have animations work
         }
 
-        Debug.Log(state);
+        // Debug.Log(state);
 
         am.SetInteger("state", (int)state);
     }

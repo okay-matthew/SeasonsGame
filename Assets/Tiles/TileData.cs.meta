@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1e39bb02e730cc44f86714836893104f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fallSprite: {fileID: 6009979695962149341, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  - winterSprite: {fileID: 7922319112748980109, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  - springSprite: {fileID: -6003383916105039452, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  - summerSprite: {fileID: -1810650699577514472, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
