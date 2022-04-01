@@ -7,7 +7,6 @@ using UnityEngine.Tilemaps;
 public class SeasonTiles : Tile {
 
     public Sprite fallSprite, winterSprite, springSprite, summerSprite;
-    public Sprite newSprite;
     public SeasonManager season;
     void Start() {
         // newSprite = fallSprite;
@@ -21,22 +20,23 @@ public class SeasonTiles : Tile {
     {
         base.GetTileData(position, tilemap, ref tileData);
 
-            season = SeasonManager.Instance;
+        season = SeasonManager.Instance;
+        Sprite newSprite = null;
 
-            switch (season.getSeason()) {
-                case "fall": 
-                    newSprite = fallSprite;
-                    break;
-                case "winter": 
-                    newSprite = winterSprite;
-                    break;
-                case "spring": 
-                    newSprite = springSprite;
-                    break;
-                case "summer": 
-                    newSprite = summerSprite;
-                    break;
-                } 
+        switch (season.getSeason()) {
+            case Season.Fall: 
+                newSprite = fallSprite;
+                break;
+            case Season.Winter: 
+                newSprite = winterSprite;
+                break;
+            case Season.Spring: 
+                newSprite = springSprite;
+                break;
+            case Season.Summer: 
+                newSprite = summerSprite;
+                break;
+            } 
 
         tileData.sprite = newSprite;
     }

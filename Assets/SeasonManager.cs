@@ -5,13 +5,9 @@ using UnityEngine;
 public class SeasonManager : MonoBehaviour
 {
     public static SeasonManager instance;
-
+    
     [SerializeField]
-    private int i = 0;
-    [SerializeField]
-    private string season = "fall";
-
-    private List<string> seasonList = new List<string>() {"fall", "winter", "spring", "summer"};
+    private Season season = Season.Fall;
 
     public static SeasonManager Instance {
         get {
@@ -27,18 +23,12 @@ public class SeasonManager : MonoBehaviour
     }
 
     public void changeSeason() {
-        try
-        {   
-            season = seasonList[++i];
-        }
-        catch (System.Exception)
-        {
-            i = 0;
-            season = seasonList[i];
-        }
+        List<Season> allSeasons = new List<Season>((Season[]) Season.GetValues(typeof(Season)));
+        int nextIndex = (allSeasons.IndexOf(season) + 1) % allSeasons.Count;
+        season = allSeasons[nextIndex];
     }
 
-    public string getSeason() {
+    public Season getSeason() {
         return season;
     }
 
