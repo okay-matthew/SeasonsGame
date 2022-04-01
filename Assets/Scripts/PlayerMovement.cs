@@ -10,9 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
 
     public List<string> orbsList;
-    public int orbCount;
+    private int orbCount;
     public Text orbText;
-
 
     private float x_dir = 0;
     private bool grounded;
