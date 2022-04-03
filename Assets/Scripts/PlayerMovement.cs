@@ -70,8 +70,7 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerState.jumping;
             
         }
-        //else if (rb.velocity.y <= -0.1f) { //different animation choice?
-        else if (grounded == false){ //i feel like theres a better way to do this
+        else if (rb.velocity.y <= -0.01f) {
             state = PlayerState.falling;
         }
 
