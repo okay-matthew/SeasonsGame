@@ -38,5 +38,4 @@ MonoBehaviour:
   winterSprite: {fileID: 7922319112748980109, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   springSprite: {fileID: -6003383916105039452, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   summerSprite: {fileID: 8772073923543845329, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
-  newSprite: {fileID: 0}
   season: {fileID: 0}

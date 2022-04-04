@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39528658beee3b74f87872a4e8642ce5, type: 3}
-  m_Name: GrassBlock1
+  m_Name: WaterTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1380881710802543299, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  m_Sprite: {fileID: -8776980985667554377, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -34,8 +34,8 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  fallSprite: {fileID: -5722831082388921584, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
-  winterSprite: {fileID: -3973709523532691504, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
-  springSprite: {fileID: -2071707036792304342, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
-  summerSprite: {fileID: 1380881710802543299, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  fallSprite: {fileID: 0}
+  winterSprite: {fileID: -6247005526502001746, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  springSprite: {fileID: 0}
+  summerSprite: {fileID: 0}
   season: {fileID: 0}
