@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   fallSprite: {fileID: 0}
-  winterSprite: {fileID: -6247005526502001746, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  winterSprite: {fileID: -3058585533041397123, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   springSprite: {fileID: 0}
   summerSprite: {fileID: 0}
   season: {fileID: 0}

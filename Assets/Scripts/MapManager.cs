@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class MapManager : MonoBehaviour
 
 
     private void Update() {
+
+        if (Input.GetKeyDown("r")) {
+            SceneManager.LoadScene("scene1");
+        }
 
         if (Input.GetMouseButtonDown(0)) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
