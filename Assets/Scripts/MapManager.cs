@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
     private void Update() {
 
         if (Input.GetKeyDown("r")) {
-            SceneManager.LoadScene("scene1");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (Input.GetMouseButtonDown(0)) {
