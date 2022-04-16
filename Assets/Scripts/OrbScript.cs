@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class OrbScript : MonoBehaviour
 {
 
-    public int orbCount;
+    private int orbCount;
     public Text orbText;
     public List<GameObject> orbList;
     private bool startFollow;
