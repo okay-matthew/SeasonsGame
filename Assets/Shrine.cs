@@ -10,12 +10,12 @@ public class Shrine : MonoBehaviour
     [SerializeField]
     private Tilemap terrain, background, backgroundObjects;
     [SerializeField]
-    // private Image spaceKey;
+    private Image spaceKey;
 
     private bool atShrine = false;
 
     void Start() {
-        // spaceKey.enabled = false;
+        spaceKey.enabled = false;
     }
 
     void Update() {
@@ -31,14 +31,14 @@ public class Shrine : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Player")) {
             atShrine = true;
-            // spaceKey.enabled = true;
+            spaceKey.enabled = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D col) {
         if (col.CompareTag("Player")) {
             atShrine = false;
-            // spaceKey.enabled = false;
+            spaceKey.enabled = false;
             // shrineText.text ="";
         }
     }
