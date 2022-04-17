@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float x_dir = 0;
     [SerializeField] private float move_speed = 4f;
-    [SerializeField] private float jump_force = 400f;
+    [SerializeField] private float jump_speed = 7f;
 
     private bool grounded = false; //when true, player can jump
     public Transform groundedChecker; //indicates where feet are to check if they're on the ground
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(){
          if (Input.GetButtonDown("Jump") && grounded) {
-            rb.AddForce(new Vector2(0f, jump_force));
+            rb.velocity = new Vector2(rb.velocity.x, jump_speed);
          }
     }
 
