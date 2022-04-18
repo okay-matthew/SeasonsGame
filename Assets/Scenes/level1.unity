@@ -4823,7 +4823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5efa5a63d20a432b81df67a7f214758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbCount: 0
   orbText: {fileID: 1410233771}
   orbList: []
   speed: 6
@@ -4859,7 +4858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 4
-  jump_force: 300
+  jump_speed: 7
   groundedChecker: {fileID: 561457220}
   checkGroundRadius: 0.2
   groundLayer:
@@ -5674,7 +5673,7 @@ MonoBehaviour:
   terrain: {fileID: 336513725}
   background: {fileID: 142705340}
   backgroundObjects: {fileID: 699807402}
-  atShrine: 0
+  spaceKey: {fileID: 0}
 --- !u!212 &2049088468
 SpriteRenderer:
   m_ObjectHideFlags: 0
