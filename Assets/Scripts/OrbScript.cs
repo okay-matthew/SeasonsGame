@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class OrbScript : MonoBehaviour
 {
-
     private int orbCount;
     public Text orbText;
     public List<GameObject> orbList;
@@ -39,6 +38,7 @@ public class OrbScript : MonoBehaviour
     }
 
     private void Update() {
+        //orb moving code inspired by/adapted from: https://www.youtube.com/watch?v=rhoQd6IAtDo
         if(startFollow && touching1 && Vector2.Distance(orb1.position, playerTarget.position) > orb1Distance){
             moveOrb(orb1);
             if(orbList.Contains(GameObject.Find("Orb 1"))){
