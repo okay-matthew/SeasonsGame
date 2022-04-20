@@ -7,8 +7,7 @@ public class OrbDetector : MonoBehaviour
 {
     private bool orbsDeposited;
     private bool touchingOrbDepositor;
-    // private int orbCounter;
-    public Image enterKey; //I stole this image off the internet we should make our own
+    public Image enterKey; //Image: https://www.google.com/url?sa=i&url=http%3A%2F%2Fpixelartmaker.com%2Fart%2Fb868ed6b29546ba&psig=AOvVaw3T2i_1zYvFfdEcik9jnmgU&ust=1650562955901000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCduKeYo_cCFQAAAAAdAAAAABAD ; maybe make our own instead?
     public Text levelCompleteText;
     private int count;
 
