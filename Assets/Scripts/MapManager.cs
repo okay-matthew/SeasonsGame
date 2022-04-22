@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MapManager : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap terrain, background, backgroundObjects;
+    private Tilemap terrain, background, backgroundObjects, water, extras;
 
 
     private void Update() {
@@ -24,14 +24,16 @@ public class MapManager : MonoBehaviour
             TileBase clickedTile = terrain.GetTile(gridPosition);
 
             Tile t = clickedTile as Tile;
-            if (t != null) {
-                Debug.Log("It's a tile: " + t);
-                season.changeSeason();
-                Debug.Log(season.getSeason());
-                terrain.RefreshAllTiles();
-                background.RefreshAllTiles();
-                backgroundObjects.RefreshAllTiles();
-            }
+            // if (t != null) {
+            //     Debug.Log("It's a tile: " + t);
+            //     season.changeSeason();
+            //     Debug.Log(season.getSeason());
+            //     terrain.RefreshAllTiles();
+            //     background.RefreshAllTiles();
+            //     backgroundObjects.RefreshAllTiles();
+            //     water.RefreshAllTiles();
+            //     extras.RefreshAllTiles();
+            // }
         }
     }
 }

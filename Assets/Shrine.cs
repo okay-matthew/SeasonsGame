@@ -8,7 +8,7 @@ public class Shrine : MonoBehaviour
 {
 
     [SerializeField]
-    private Tilemap terrain, background, backgroundObjects;
+    private Tilemap terrain, background, backgroundObjects, water, extras;
     [SerializeField]
     private Image spaceKey;
 
@@ -22,9 +22,12 @@ public class Shrine : MonoBehaviour
         if (Input.GetButtonDown("Meditate") && atShrine) {
             SeasonManager season = SeasonManager.Instance;
             season.changeSeason();
+            Debug.Log(season.getSeason());
             terrain.RefreshAllTiles();
             background.RefreshAllTiles();
             backgroundObjects.RefreshAllTiles();
+            water.RefreshAllTiles();
+            extras.RefreshAllTiles();
         }
     }
 
