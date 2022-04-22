@@ -22,6 +22,10 @@ public class BackgroundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SeasonChange();
+    }
+
+    void SeasonChange() {
         switch (season.getSeason()) {
             case Season.Fall: 
                 sprite = fallSprite;
