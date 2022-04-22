@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39528658beee3b74f87872a4e8642ce5, type: 3}
   m_Name: Extras-Reeds
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8868862784245696351, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -34,8 +34,8 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  fallSprite: {fileID: 0}
-  winterSprite: {fileID: 0}
-  springSprite: {fileID: 0}
-  summerSprite: {fileID: 0}
+  fallSprite: {fileID: 1068715933086324240, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  winterSprite: {fileID: -4436500804015269191, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  springSprite: {fileID: -8868862784245696351, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  summerSprite: {fileID: -4862688474815443454, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
   season: {fileID: 0}

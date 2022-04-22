@@ -36,6 +36,6 @@ MonoBehaviour:
   m_ColliderType: 1
   fallSprite: {fileID: -1838549879511088338, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   winterSprite: {fileID: -5196637134226436775, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
-  springSprite: {fileID: 8764675035685084207, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
-  summerSprite: {fileID: -5041048421030829783, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  springSprite: {fileID: -5041048421030829783, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
+  summerSprite: {fileID: 8764675035685084207, guid: cba7f05173d92ba4094cba4633b94356, type: 3}
   season: {fileID: 0}
