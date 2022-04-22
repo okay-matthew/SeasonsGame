@@ -8,7 +8,7 @@ public class SceneChange : MonoBehaviour
 {
     public void LoadGame() 
     {
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene("testing");
     }
 
     public void QuitGame() 
