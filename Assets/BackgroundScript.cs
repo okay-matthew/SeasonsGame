@@ -12,7 +12,6 @@ public class BackgroundScript : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -20,14 +19,12 @@ public class BackgroundScript : MonoBehaviour
         season = SeasonManager.Instance;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (previousSeason == season.getSeason()) {
             SeasonChange();
         }
         previousSeason = season.getSeason();
-        
     }
 
     void SeasonChange() {

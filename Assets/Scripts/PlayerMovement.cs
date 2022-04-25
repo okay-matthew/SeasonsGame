@@ -17,11 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundedChecker; //indicates where feet are to check if they're on the ground
     public float checkGroundRadius; //radius around groundedChecker to see if its overlapping ground
     public LayerMask groundLayer; //links to ground layer
-
-    public bool unpaused;
-
+    public bool unpaused; //controls player movement during transitions
     private enum PlayerState { idle, running, jumping, falling}
-
 
 
     // Start is called before the first frame update
@@ -34,15 +31,10 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-
-        if (unpaused) 
-        {
+        if (unpaused) {
             Move();
-
             Jump();
-
             CheckGrounded();
-
             UpdatePlayerAnimation();
         }
     }

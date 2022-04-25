@@ -8,7 +8,6 @@ public class SeasonWaterTile : Tile {
 
     public Sprite fallSprite, winterSprite, springSprite, summerSprite;
     public SeasonManager season;
-
     bool winter;
 
     void Start() {
@@ -26,7 +25,6 @@ public class SeasonWaterTile : Tile {
 
         season = SeasonManager.Instance;
         Sprite newSprite = null;
-
 
         switch (season.getSeason()) {
             case Season.Fall: 
