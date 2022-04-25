@@ -8,6 +8,7 @@ public class BackgroundScript : MonoBehaviour
     [SerializeField]
     public Sprite fallSprite, winterSprite, springSprite, summerSprite, sprite;
     public SeasonManager season;
+    public Season previousSeason;
 
     public SpriteRenderer spriteRenderer;
 
@@ -22,7 +23,11 @@ public class BackgroundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SeasonChange();
+        if (previousSeason == season.getSeason()) {
+            SeasonChange();
+        }
+        previousSeason = season.getSeason();
+        
     }
 
     void SeasonChange() {
