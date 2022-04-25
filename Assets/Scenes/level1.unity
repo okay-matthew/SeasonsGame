@@ -2947,6 +2947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackOutSquare: {fileID: 1564017544}
+  objectColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &206313464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3006,7 +3007,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &206313467
 RectTransform:
@@ -5347,6 +5348,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  unpaused: 0
 --- !u!61 &1776513327
 BoxCollider2D:
   m_ObjectHideFlags: 0

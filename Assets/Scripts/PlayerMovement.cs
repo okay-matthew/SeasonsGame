@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public float checkGroundRadius; //radius around groundedChecker to see if its overlapping ground
     public LayerMask groundLayer; //links to ground layer
 
+    public bool unpaused;
+
     private enum PlayerState { idle, running, jumping, falling}
 
 
@@ -27,18 +29,22 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // grabs the rigid body of the player, which allows it to collide with the ground
         am = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        unpaused = true;
     }
 
     // Update is called once per frame
     void Update() {
 
-        Move();
+        if (unpaused) 
+        {
+            Move();
 
-        Jump();
+            Jump();
 
-        CheckGrounded();
+            CheckGrounded();
 
-        UpdatePlayerAnimation();
+            UpdatePlayerAnimation();
+        }
     }
 
     private void UpdatePlayerAnimation() {

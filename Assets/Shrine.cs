@@ -15,6 +15,8 @@ public class Shrine : MonoBehaviour
     
     UIController blackOutScript;
 
+    PlayerMovement playerScript;
+
     private bool atShrine = false;
 
     
@@ -22,18 +24,13 @@ public class Shrine : MonoBehaviour
     void Start() {
         spaceKey.enabled = false;
         blackOutScript = GameObject.Find("FadeToBlack").GetComponent<UIController>();
+        playerScript = GameObject.Find("Agate").GetComponent<PlayerMovement>();
     }
 
     void Update() {
 
         if (Input.GetButtonDown("Meditate") && atShrine) {
-
-            blackOutScript.FadeOut(); //Script to fade out
-
-            SeasonChange();
-
-            blackOutScript.FadeIn(); // Script to fade in
-
+            StartCoroutine(SeasonTransition());
         }
 
     }
@@ -61,4 +58,16 @@ public class Shrine : MonoBehaviour
         water.RefreshAllTiles();
         extras.RefreshAllTiles();
     }
+
+    IEnumerator SeasonTransition() {
+        playerScript.unpaused = false;
+        blackOutScript.FadeOut();
+        yield return new WaitForSeconds(2f);
+        
+        SeasonChange();
+        playerScript.unpaused = true;
+        blackOutScript.FadeIn();
+    }
+
+
 }
