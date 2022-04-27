@@ -26,6 +26,10 @@ public class OrbDetector : MonoBehaviour
     void Update()
     {
         CheckOrbsDeposited();
+        
+        if(Input.GetKeyDown(KeyCode.R)){
+                    Time.timeScale = 1;
+                }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
