@@ -6,23 +6,14 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     [SerializeField]
-    public GameObject blackOutSquare;
+    public GameObject whiteOutSquare
+    ;
 
     public Color objectColor;
 
     void Start() {
-        objectColor = blackOutSquare.GetComponent<Image>().color;
-    }
-
-    void Update()
-    {
-        // if(Input.GetKeyDown(KeyCode.A)) 
-        // {
-        //     StartCoroutine(FadeOutBlack());
-        // }
-        // if (Input.GetKeyDown(KeyCode.S)) {
-        //     StartCoroutine(FadeOutBlack(false));
-        // }
+        objectColor = whiteOutSquare
+        .GetComponent<Image>().color;
     }
 
     public IEnumerator FadeOutBlack(bool fadeToBlack = true, int fadeSpeed = 5) 
@@ -31,20 +22,24 @@ public class UIController : MonoBehaviour
 
         if (fadeToBlack) 
         {
-            while (blackOutSquare.GetComponent<Image>().color.a < 1) {
+            while (whiteOutSquare
+            .GetComponent<Image>().color.a < 1) {
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
 
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                blackOutSquare.GetComponent<Image>().color = objectColor;
+                whiteOutSquare
+                .GetComponent<Image>().color = objectColor;
                 yield return null;
             }
         } else 
         {
-            while (blackOutSquare.GetComponent<Image>().color.a > 0) 
+            while (whiteOutSquare
+            .GetComponent<Image>().color.a > 0) 
             {
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                blackOutSquare.GetComponent<Image>().color = objectColor;
+                whiteOutSquare
+                .GetComponent<Image>().color = objectColor;
                 yield return null;
             }
         }

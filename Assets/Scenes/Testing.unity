@@ -13987,7 +13987,7 @@ GameObject:
   - component: {fileID: 223609013}
   - component: {fileID: 223609012}
   m_Layer: 5
-  m_Name: BlackFade
+  m_Name: WhiteFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14006,15 +14006,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -23191,7 +23191,7 @@ MonoBehaviour:
   water: {fileID: 540071669}
   extras: {fileID: 1106489206}
   spaceKey: {fileID: 121363150}
-  blackOutScript: {fileID: 0}
+  whiteOutScript: {fileID: 0}
 --- !u!212 &1212458279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33229,7 +33229,7 @@ GameObject:
   - component: {fileID: 1603361141}
   - component: {fileID: 1603361140}
   m_Layer: 5
-  m_Name: FadeToBlack
+  m_Name: FadeToWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33247,8 +33247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61602f108af98214baa0179326141cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackOutSquare: {fileID: 223609011}
-  objectColor: {r: 0, g: 0, b: 0, a: 0}
+  whiteOutSquare: {fileID: 223609011}
+  objectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1603361141
 MonoBehaviour:
   m_ObjectHideFlags: 0

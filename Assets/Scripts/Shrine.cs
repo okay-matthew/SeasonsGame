@@ -13,7 +13,7 @@ public class Shrine : MonoBehaviour
     private Image spaceKey;
     [SerializeField]
     
-    UIController blackOutScript;
+    UIController whiteOutScript;
 
     PlayerMovement playerScript;
 
@@ -23,7 +23,7 @@ public class Shrine : MonoBehaviour
 
     void Start() {
         spaceKey.enabled = false;
-        blackOutScript = GameObject.Find("FadeToBlack").GetComponent<UIController>();
+        whiteOutScript = GameObject.Find("FadeToWhite").GetComponent<UIController>();
         playerScript = GameObject.Find("Agate").GetComponent<PlayerMovement>();
     }
 
@@ -61,12 +61,12 @@ public class Shrine : MonoBehaviour
 
     IEnumerator SeasonTransition() {
         playerScript.unpaused = false;
-        blackOutScript.FadeOut();
-        yield return new WaitForSeconds(2f);
+        whiteOutScript.FadeOut();
+        yield return new WaitForSeconds(1f);
         
         SeasonChange();
         playerScript.unpaused = true;
-        blackOutScript.FadeIn();
+        whiteOutScript.FadeIn();
     }
 
 
