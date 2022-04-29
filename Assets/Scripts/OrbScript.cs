@@ -9,13 +9,12 @@ public class OrbScript : MonoBehaviour
     public Text orbText;
     public List<GameObject> orbList;
     private bool startFollow;
-
     public float speed;
     private Transform playerTarget;
     private Transform orb1;
     private Transform orb2;
     private Transform orb3;
-
+    
     private bool touching1;
     private bool touching2;
     private bool touching3;

@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61602f108af98214baa0179326141cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackOutSquare: {fileID: 1564017544}
+  whiteOutSquare: {fileID: 0}
   objectColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &206313464
 MonoBehaviour:
@@ -3657,7 +3657,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dc0d97f9058a143d9b082df274c67e53, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4512,7 +4512,7 @@ MonoBehaviour:
   water: {fileID: 1836956911}
   extras: {fileID: 699807402}
   spaceKey: {fileID: 1325331728}
-  blackOutScript: {fileID: 0}
+  whiteOutScript: {fileID: 0}
 --- !u!212 &2049088468
 SpriteRenderer:
   m_ObjectHideFlags: 0
