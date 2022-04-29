@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OrbDetector : MonoBehaviour
 {
@@ -41,8 +42,8 @@ public class OrbDetector : MonoBehaviour
         if(touchingOrbDepositor && GameObject.FindGameObjectsWithTag("OrbFound").Length == 3){    
             enterKey.enabled = true;
             if(Input.GetButtonDown("Submit")){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 levelCompleteText.text = "Level Complete";
-                Time.timeScale = 0;
             }
         }
     }
