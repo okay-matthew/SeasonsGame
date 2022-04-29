@@ -47,6 +47,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: e7272c04559f22948aa7e51251bbddd8, type: 3}
     - {fileID: 2800000, guid: ecc53597e2744d04d966c14ccb127f3e, type: 3}
     - {fileID: 2800000, guid: 5c4cc47be509430459b8272d452c6504, type: 3}
+    - {fileID: 2800000, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+    - {fileID: 2800000, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -81,6 +83,22 @@ SpriteAtlas:
   - {fileID: -6861181995846945715, guid: e7272c04559f22948aa7e51251bbddd8, type: 3}
   - {fileID: 7150352251284032170, guid: e7272c04559f22948aa7e51251bbddd8, type: 3}
   - {fileID: -7241209458294808388, guid: e7272c04559f22948aa7e51251bbddd8, type: 3}
+  - {fileID: 3321156333002209208, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -4862688474815443454, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -4915636553331692606, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -6733569936331969910, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 4037694000084794028, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -8868862784245696351, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 8779840768367882894, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 8503394984714219600, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -4151631116896812192, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 2483507405922604551, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 2757043201736346239, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 751262426843794176, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 1068715933086324240, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -4436500804015269191, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: -969736724510758451, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
+  - {fileID: 5655532330612734923, guid: 8e061e456e2789543bc0f6e2297633c3, type: 3}
   - {fileID: 7603946867070472581, guid: ecc53597e2744d04d966c14ccb127f3e, type: 3}
   - {fileID: -3351445653949477423, guid: ecc53597e2744d04d966c14ccb127f3e, type: 3}
   - {fileID: -5742506528418773230, guid: ecc53597e2744d04d966c14ccb127f3e, type: 3}
@@ -168,6 +186,14 @@ SpriteAtlas:
   - {fileID: -8650832514417175965, guid: 5c4cc47be509430459b8272d452c6504, type: 3}
   - {fileID: 5925800952538264451, guid: 5c4cc47be509430459b8272d452c6504, type: 3}
   - {fileID: -5015077838799973732, guid: 5c4cc47be509430459b8272d452c6504, type: 3}
+  - {fileID: 7736868996614233699, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: -4957701823899691831, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: 5474930454804491374, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: -8312019110295965764, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: -1602166766601685959, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: 6020607038215299568, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: 5763807586580432914, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
+  - {fileID: -7536898134917388819, guid: 7aeaa43ea9f25e141b84a350cefe6e66, type: 3}
   m_PackedSpriteNamesToIndex:
   - Sheet-spring_28
   - Sheet-spring_23
@@ -198,6 +224,22 @@ SpriteAtlas:
   - Sheet-spring_13
   - Sheet-spring_10
   - Sheet-spring_11
+  - Sheet-Extras-1_7
+  - Sheet-Extras-1_6
+  - Sheet-Extras-1_5
+  - Sheet-Extras-1_4
+  - Sheet-Extras-1_3
+  - Sheet-Extras-1_2
+  - Sheet-Extras-1_1
+  - Sheet-Extras-1_0
+  - Sheet-Extras-1_9
+  - Sheet-Extras-1_8
+  - Sheet-Extras-1_12
+  - Sheet-Extras-1_13
+  - Sheet-Extras-1_10
+  - Sheet-Extras-1_11
+  - Sheet-Extras-1_14
+  - Sheet-Extras-1_15
   - Sheet-summer_9
   - Sheet-summer_8
   - Sheet-summer_3
@@ -285,6 +327,14 @@ SpriteAtlas:
   - Sheet-winter_0
   - Sheet-winter_9
   - Sheet-winter_8
+  - Sheet-bounceshroom_0
+  - Sheet-bounceshroom_1
+  - Sheet-bounceshroom_2
+  - Sheet-bounceshroom_3
+  - Sheet-bounceshroom_4
+  - Sheet-bounceshroom_5
+  - Sheet-bounceshroom_6
+  - Sheet-bounceshroom_7
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0
