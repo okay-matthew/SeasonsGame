@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
 
     private float x_dir = 0;
-    [SerializeField] private float move_speed = 4f;
-    [SerializeField] private float jump_speed = 7f;
+    [SerializeField] public float move_speed = 4f;
+    [SerializeField] public float jump_speed = 7f;
 
     private bool grounded = false; //when true, player can jump
     public Transform groundedChecker; //indicates where feet are to check if they're on the ground

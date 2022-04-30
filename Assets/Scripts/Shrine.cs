@@ -61,13 +61,13 @@ public class Shrine : MonoBehaviour
 
     IEnumerator SeasonTransition() {
         playerScript.unpaused = false;
+        playerScript.move_speed = 0f;
         whiteOutScript.FadeOut();
         yield return new WaitForSeconds(1f);
         
         SeasonChange();
         playerScript.unpaused = true;
+        playerScript.move_speed = 4f;
         whiteOutScript.FadeIn();
     }
-
-
 }
