@@ -5,7 +5,7 @@ using UnityEngine;
 public class BounceFlower : MonoBehaviour
 {
 
-    private float bounce = 10f;
+    private float bounce = 7f;
 
     
     private void OnCollisionEnter2D(Collision2D collision)
