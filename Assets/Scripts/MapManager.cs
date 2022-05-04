@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class MapManager : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap terrain, background, backgroundObjects, water, extras;
+    private Tilemap terrain, background, bounceshrooms, trees, leaves, water, extras;
 
 
     private void Update() {
@@ -29,7 +29,9 @@ public class MapManager : MonoBehaviour
     public void RefreshTiles() {
         terrain.RefreshAllTiles();
         background.RefreshAllTiles();
-        backgroundObjects.RefreshAllTiles();
+        bounceshrooms.RefreshAllTiles();
+        trees.RefreshAllTiles();
+        leaves.RefreshAllTiles();
         water.RefreshAllTiles();
         extras.RefreshAllTiles();
     }
