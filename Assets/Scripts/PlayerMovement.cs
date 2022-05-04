@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+    Script for player character behavior.
+*/
+
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb; 
@@ -31,14 +35,19 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (unpaused) {
+        if (unpaused) { // pause for shrine interaction. Prevents player from moving shrine transition
             Move();
             Jump();
             CheckGrounded();
             UpdatePlayerAnimation();
         }
     }
+    /* 
+        Manages the player animation based on x direction and y velocity
 
+        NOTE: y velocity fluctuates. It is usually not zero, so the animation trigger must 
+        account for this.
+    */
     private void UpdatePlayerAnimation() {
 
         PlayerState state;
@@ -56,28 +65,35 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y >= 0.01f) {
             state = PlayerState.jumping;
             
-        }
-        else if (rb.velocity.y <= -0.01f) {
+        } else if (rb.velocity.y <= -0.01f) {
             state = PlayerState.falling;
         }
 
         am.SetInteger("state", (int)state);
     }
 
+    /*
+        Moves player horizontally 
+    */
     private void Move(){
         x_dir = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(x_dir * move_speed, rb.velocity.y);
     }
 
+    /*
+        Controls jump
+    */
     private void Jump(){
          if (Input.GetButtonDown("Jump") && grounded) {
             rb.velocity = new Vector2(rb.velocity.x, jump_speed);
          }
     }
 
+    /*
+        finds position of groundedChecker and uses the radius to determine whether the circle is overlapping anything on the ground layer
+        returns true if its touching or false if its not
+    */
     private void CheckGrounded(){
-        //finds position of groundedChecker and uses the radius to determine whether the circle is overlapping anything on the ground layer
-        //returns true if its touching or false if its not
         grounded = Physics2D.OverlapCircle(groundedChecker.position, checkGroundRadius, groundLayer);
     }
 }

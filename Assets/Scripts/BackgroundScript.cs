@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ Script for the background image to each level
+*/
+
 public class BackgroundScript : MonoBehaviour
 {
 

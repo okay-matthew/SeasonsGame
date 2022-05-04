@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 
+/* Manages the refreshing of tiles and has potential to handle other
+ actions to perform on the tilemaps
+*/
+
 public class MapManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,16 +19,6 @@ public class MapManager : MonoBehaviour
         if (Input.GetKeyDown("r")) { //TODO: sorta a weird place for this, no?
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        
-        // if (Input.GetMouseButtonDown(0)) {
-        //     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //     Vector3Int gridPosition = terrain.WorldToCell(mousePosition);
-        //     SeasonManager season = SeasonManager.Instance;
-
-        //     TileBase clickedTile = terrain.GetTile(gridPosition);
-
-        //     Tile t = clickedTile as Tile;
-        // }
     }
 
     /*

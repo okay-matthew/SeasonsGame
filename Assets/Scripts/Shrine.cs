@@ -11,15 +11,13 @@ public class Shrine : MonoBehaviour
 {
 
     [SerializeField]
-    private Tilemap terrain, background, backgroundObjects, water, extras;
-    [SerializeField]
     private Image spaceKey; //Image which appears whenever the player comes into contact with the shrine.
     [SerializeField]
-    MapManager mapManager;
+    private MapManager mapManager;
     
-    UIController whiteOutScript; //script for fade transition
+    private UIController whiteOutScript; //script for fade transition
 
-    PlayerMovement playerScript;
+    private PlayerMovement playerScript;
     private bool atShrine = false;
 
     
@@ -32,7 +30,7 @@ public class Shrine : MonoBehaviour
 
     void Update() {
 
-        if (Input.GetButtonDown("Meditate") && atShrine) { //TODO: maybe change all buttons to raw input, rather than our jargon
+        if (Input.GetButtonDown("Space") && atShrine) { //TODO: maybe change all buttons to raw input, rather than our jargon
             StartCoroutine(SeasonTransition());
         }
 
@@ -67,18 +65,18 @@ public class Shrine : MonoBehaviour
     }
 
     /*
-    Run with coroutine to order tilemap refresh so that awkward flash of season change occuers after
-    the white fade.
+    Run with coroutine to time tilemap refresh. Else an akward season change occurs before
+    the white fade. This makes it so that it happens behind the white fade.
     */
     IEnumerator SeasonTransition() {
         playerScript.unpaused = false;
         playerScript.rb.velocity = new Vector2(0, 0); // removes glitch where player 'slides' on ground when space is pressed near shrine
-        whiteOutScript.FadeOut();                     // while moving. Sometimes this would cause players to slide off edge.
+        whiteOutScript.FadeOutBlack();                // while moving. Sometimes this would cause players to slide off edge.
         yield return new WaitForSeconds(1f);
         
         SeasonChange();
         playerScript.unpaused = true;
-        whiteOutScript.FadeIn();
+        whiteOutScript.FadeInBlack();
     }
 
 }

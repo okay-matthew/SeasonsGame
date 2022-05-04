@@ -7,51 +7,50 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     [SerializeField]
-    public GameObject whiteOutSquare
-    ;
+    public GameObject fadeImage;
 
     public Color objectColor;
 
     void Start() {
-        objectColor = whiteOutSquare
+        objectColor = fadeImage
         .GetComponent<Image>().color;
     }
 
-    public IEnumerator FadeOutBlack(bool fadeToBlack = true, int fadeSpeed = 5) 
+    public IEnumerator FadeOut(bool fadeTo = true, int fadeSpeed = 5) 
     {
         float fadeAmount;
 
-        if (fadeToBlack) 
+        if (fadeTo) 
         {
-            while (whiteOutSquare
+            while (fadeImage
             .GetComponent<Image>().color.a < 1) {
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
 
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                whiteOutSquare
+                fadeImage
                 .GetComponent<Image>().color = objectColor;
                 yield return null;
             }
         } else 
         {
-            while (whiteOutSquare
+            while (fadeImage
             .GetComponent<Image>().color.a > 0) 
             {
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
                 objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
-                whiteOutSquare
+                fadeImage
                 .GetComponent<Image>().color = objectColor;
                 yield return null;
             }
         }
     }
 
-    public void FadeIn() {
-        StartCoroutine(FadeOutBlack(false));
+    public void FadeInBlack() {
+        StartCoroutine(FadeOut(false));
     }
 
-    public void FadeOut() {
-        StartCoroutine(FadeOutBlack());
+    public void FadeOutBlack() {
+        StartCoroutine(FadeOut());
     }
 
 }

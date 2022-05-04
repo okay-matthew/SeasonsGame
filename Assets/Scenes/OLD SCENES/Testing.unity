@@ -23192,11 +23192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080f557beae92de4eb775826232ac966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain: {fileID: 154550347}
-  background: {fileID: 587006654}
-  backgroundObjects: {fileID: 815799235}
-  water: {fileID: 540071669}
-  extras: {fileID: 1106489206}
   spaceKey: {fileID: 121363150}
   mapManager: {fileID: 1468613642}
 --- !u!212 &1212458279
@@ -33254,7 +33249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61602f108af98214baa0179326141cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteOutSquare: {fileID: 223609011}
+  fadeImage: {fileID: 223609011}
   objectColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1603361141
 MonoBehaviour:

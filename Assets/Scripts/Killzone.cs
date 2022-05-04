@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/* Player killzone */
+
 public class Killzone : MonoBehaviour
 {
 
