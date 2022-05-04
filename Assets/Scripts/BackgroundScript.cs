@@ -15,18 +15,21 @@ public class BackgroundScript : MonoBehaviour
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        sprite = gameObject.GetComponent<Sprite>();
+        sprite = gameObject.GetComponent<Sprite>(); //allows us to change the backgrounds sprite
         season = SeasonManager.Instance;
     }
 
     void Update()
     {
-        if (previousSeason == season.getSeason()) {
-            SeasonChange();
+        if (previousSeason == season.getSeason()) { //only changes seasons when a different season from the last update
+            SeasonChange();                         // is detected
         }
         previousSeason = season.getSeason();
     }
-
+    
+    /*
+    Changes sprite when the season changes.
+    */
     void SeasonChange() {
         switch (season.getSeason()) {
             case Season.Fall: 

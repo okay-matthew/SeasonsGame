@@ -11,18 +11,32 @@ public class MapManager : MonoBehaviour
 
 
     private void Update() {
-        if (Input.GetKeyDown("r")) {
+
+        if (Input.GetKeyDown("r")) { //TODO: sorta a weird place for this, no?
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
-        if (Input.GetMouseButtonDown(0)) {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPosition = terrain.WorldToCell(mousePosition);
-            SeasonManager season = SeasonManager.Instance;
+        // if (Input.GetMouseButtonDown(0)) {
+        //     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //     Vector3Int gridPosition = terrain.WorldToCell(mousePosition);
+        //     SeasonManager season = SeasonManager.Instance;
 
-            TileBase clickedTile = terrain.GetTile(gridPosition);
+        //     TileBase clickedTile = terrain.GetTile(gridPosition);
 
-            Tile t = clickedTile as Tile;
-        }
+        //     Tile t = clickedTile as Tile;
+        // }
+    }
+
+    /*
+        public method to refresh the tiles on each tilemap. As the sprite of a SeasonTile
+        is updated after its corresponding tilemap refreshes, whenenver the season changes, call this  
+        method.
+    */
+    public void RefreshTiles() {
+        terrain.RefreshAllTiles();
+        background.RefreshAllTiles();
+        backgroundObjects.RefreshAllTiles();
+        water.RefreshAllTiles();
+        extras.RefreshAllTiles();
     }
 }

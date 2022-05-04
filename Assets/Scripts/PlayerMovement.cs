@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb; 
+    public Rigidbody2D rb; 
     private Animator am;
     private SpriteRenderer sprite;
 
@@ -46,12 +46,10 @@ public class PlayerMovement : MonoBehaviour
         if (x_dir > 0f) {
             state = PlayerState.running;
             sprite.flipX = false;
-        } 
-        else if (x_dir < 0f) {
+        } else if (x_dir < 0f) {
             state = PlayerState.running;
             sprite.flipX = true;
-        }
-        else {
+        } else {
             state = PlayerState.idle;
         }
 
@@ -62,8 +60,6 @@ public class PlayerMovement : MonoBehaviour
         else if (rb.velocity.y <= -0.01f) {
             state = PlayerState.falling;
         }
-
-        // Debug.Log(state);
 
         am.SetInteger("state", (int)state);
     }

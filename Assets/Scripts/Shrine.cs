@@ -4,19 +4,22 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
+/*
+ Public script for the shrine. The shrine allows the player to change the season in game while pressing 'space' while touching it. 
+*/
 public class Shrine : MonoBehaviour
 {
 
     [SerializeField]
     private Tilemap terrain, background, backgroundObjects, water, extras;
     [SerializeField]
-    private Image spaceKey;
+    private Image spaceKey; //Image which appears whenever the player comes into contact with the shrine.
     [SerializeField]
+    MapManager mapManager;
     
-    UIController whiteOutScript;
+    UIController whiteOutScript; //script for fade transition
 
     PlayerMovement playerScript;
-
     private bool atShrine = false;
 
     
@@ -29,12 +32,16 @@ public class Shrine : MonoBehaviour
 
     void Update() {
 
-        if (Input.GetButtonDown("Meditate") && atShrine) {
+        if (Input.GetButtonDown("Meditate") && atShrine) { //TODO: maybe change all buttons to raw input, rather than our jargon
             StartCoroutine(SeasonTransition());
         }
 
     }
 
+    /*
+    When the player enters the shrine's area, shows the spacekey image.
+    Sets bool to flag that the player is in the shrine's area.
+    */
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Player")) {
             atShrine = true;
@@ -42,6 +49,10 @@ public class Shrine : MonoBehaviour
         }
     }
 
+    /*
+    When the player exits the shrine's area, spacekey image is removed.
+    Sets bool to flag that the player is outside the shrine's area.
+    */
     void OnTriggerExit2D(Collider2D col) {
         if (col.CompareTag("Player")) {
             atShrine = false;
@@ -52,22 +63,22 @@ public class Shrine : MonoBehaviour
     void SeasonChange() {
         SeasonManager season = SeasonManager.Instance;
         season.changeSeason();
-        terrain.RefreshAllTiles();
-        background.RefreshAllTiles();
-        backgroundObjects.RefreshAllTiles();
-        water.RefreshAllTiles();
-        extras.RefreshAllTiles();
+        mapManager.RefreshTiles(); // refreshes tiles to update seasontile sprites
     }
 
+    /*
+    Run with coroutine to order tilemap refresh so that awkward flash of season change occuers after
+    the white fade.
+    */
     IEnumerator SeasonTransition() {
         playerScript.unpaused = false;
-        playerScript.move_speed = 0f;
-        whiteOutScript.FadeOut();
+        playerScript.rb.velocity = new Vector2(0, 0); // removes glitch where player 'slides' on ground when space is pressed near shrine
+        whiteOutScript.FadeOut();                     // while moving. Sometimes this would cause players to slide off edge.
         yield return new WaitForSeconds(1f);
         
         SeasonChange();
         playerScript.unpaused = true;
-        playerScript.move_speed = 4f;
         whiteOutScript.FadeIn();
     }
+
 }
