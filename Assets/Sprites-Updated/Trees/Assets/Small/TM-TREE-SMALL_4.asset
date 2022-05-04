@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39528658beee3b74f87872a4e8642ce5, type: 3}
-  m_Name: Trunk
+  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TM-TREE-SMALL_4
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -5991275788832695958, guid: 010b080faafc9da498a91fe091bc4a3b, type: 3}
+  m_Sprite: {fileID: -7037468500479518541, guid: e255291b0ecfd1a4d94d5f62ea55074c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -34,8 +34,3 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  fallSprite: {fileID: -5991275788832695958, guid: 010b080faafc9da498a91fe091bc4a3b, type: 3}
-  winterSprite: {fileID: 3968979532909969979, guid: 010b080faafc9da498a91fe091bc4a3b, type: 3}
-  springSprite: {fileID: -5991275788832695958, guid: 010b080faafc9da498a91fe091bc4a3b, type: 3}
-  summerSprite: {fileID: -5991275788832695958, guid: 010b080faafc9da498a91fe091bc4a3b, type: 3}
-  season: {fileID: 0}
