@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/**
+* Manages everything to do with the orb depositor
+*/
 public class OrbDetector : MonoBehaviour
 {
     private bool orbsDeposited;
     private bool touchingOrbDepositor;
-    public Image enterKey; //Image: https://www.google.com/url?sa=i&url=http%3A%2F%2Fpixelartmaker.com%2Fart%2Fb868ed6b29546ba&psig=AOvVaw3T2i_1zYvFfdEcik9jnmgU&ust=1650562955901000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCduKeYo_cCFQAAAAAdAAAAABAD ; maybe make our own instead?
+    public Image enterKey;
     public Text levelCompleteText;
-    private int count;
 
 
 
@@ -19,7 +21,6 @@ public class OrbDetector : MonoBehaviour
     {
         touchingOrbDepositor = false;
         levelCompleteText.text = "";
-        count = 0;
         enterKey.enabled = false;
     }
 
@@ -28,16 +29,23 @@ public class OrbDetector : MonoBehaviour
     {
         CheckOrbsDeposited();
         
-        if(Input.GetKeyDown(KeyCode.R)){
+        if(Input.GetKeyDown(KeyCode.R)){ // Allows player to reset level after winning
             Time.timeScale = 1;
         }
     }
-
+    
+    /**
+    * Indicates when the orb detector and player are touching
+    */
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("Player")) {
             touchingOrbDepositor = true;
         } 
     }
+
+    /**
+    * Checks whether the player has found all the orbs and is touching the depositor, if so allows the user to deposit the orbs
+    */
     private void CheckOrbsDeposited() {
         if(touchingOrbDepositor && GameObject.FindGameObjectsWithTag("OrbFound").Length == 3){    
             enterKey.enabled = true;
@@ -48,9 +56,11 @@ public class OrbDetector : MonoBehaviour
         }
     }
     
+    /**
+    * Indicates when player and orb depositor are not touching
+    */
     private void OnTriggerExit2D(Collider2D collision) {
         if(collision.CompareTag("Player")){
-            count++;
             touchingOrbDepositor = false;
             enterKey.enabled = false;
         }

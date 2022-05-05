@@ -3,96 +3,81 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/**
+* Manages everything to do with orb collection & orbs following player
+*/
 public class OrbScript : MonoBehaviour
 {
     private int orbCount;
     public Text orbText;
     public List<GameObject> orbList;
     private bool startFollow;
-    public float speed;
+    public float orbSpeed;
     private Transform playerTarget;
-    private Transform orb1;
-    private Transform orb2;
-    private Transform orb3;
-    
-    private bool touching1;
-    private bool touching2;
-    private bool touching3;
-    private double orb1Distance;
-    private double orb2Distance;
-    private double orb3Distance;
+    private GameObject orb1, orb2, orb3;
+    private Transform orb1Transform, orb2Transform, orb3Transform;
+    private bool orb1Touching, orb2Touching, orb3Touching;
+    private Transform orb1Target, orb2Target, orb3Target;
+    private double distance;
 
 
     private void Start() {
         playerTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        orb1 = GameObject.Find("Orb 1").GetComponent<Transform>();
-        orb2 = GameObject.Find("Orb 2").GetComponent<Transform>();
-        orb3 = GameObject.Find("Orb 3").GetComponent<Transform>();
+        orb1 = GameObject.Find("Orb 1");
+        orb2 = GameObject.Find("Orb 2");
+        orb3 = GameObject.Find("Orb 3");
+        orb1Transform = orb1.GetComponent<Transform>();
+        orb2Transform = GameObject.Find("Orb 2").GetComponent<Transform>();
+        orb3Transform = GameObject.Find("Orb 3").GetComponent<Transform>();
         startFollow = false;
         orbCount = 0;
-        orb1Distance = 0.7;
-        orb2Distance = 0.7;
-        orb3Distance = 0.7;
         orbText.text = "Orbs Collected: " + orbCount.ToString() + "/3";
+        distance = 0.4;
     }
-
     private void Update() {
-        //orb moving code inspired by/adapted from: https://www.youtube.com/watch?v=rhoQd6IAtDo
-        if(startFollow && touching1 && Vector2.Distance(orb1.position, playerTarget.position) > orb1Distance){
-            moveOrb(orb1);
-            if(orbList.Contains(GameObject.Find("Orb 1"))){
-                if(orbList[0] == GameObject.Find("Orb 1")){
-                    orb1Distance = 0.6;
-                } else if(orbList[1] == GameObject.Find("Orb 1")){
-                    orb1Distance = 0.9;
-                } else if(orbList[2] == GameObject.Find("Orb 1")){
-                    orb1Distance = 1.2;
-                }
-            }
+        if(startFollow && orb1Touching){
+            startCatchOrb(orb1, orb1Target);
         }
-        if(startFollow && touching2 && Vector2.Distance(orb2.position, playerTarget.position) > orb2Distance){
-            moveOrb(orb2);
-            if(orbList.Contains(GameObject.Find("Orb 2"))){
-                if(orbList[0] == GameObject.Find("Orb 2")){
-                    orb2Distance = 0.6;
-                } else if(orbList[1] == GameObject.Find("Orb 2")){
-                    orb2Distance = 0.9;
-                } else if(orbList[2] == GameObject.Find("Orb 2")){
-                    orb2Distance = 1.2;
-                }
-            }       
+        if(startFollow && orb2Touching){
+            startCatchOrb(orb2, orb2Target);
         }
-        if(startFollow && touching3 && Vector2.Distance(orb3.position, playerTarget.position) > orb3Distance){
-            moveOrb(orb3);
-            if(orbList.Contains(GameObject.Find("Orb 3"))){
-                if(orbList[0] == GameObject.Find("Orb 3")){
-                    orb3Distance = 0.6;
-                } else if(orbList[1] == GameObject.Find("Orb 3")){
-                    orb3Distance = 0.9;
-                } else if(orbList[2] == GameObject.Find("Orb 3")){
-                    orb3Distance = 1.2;
-                }
-            }
+        if(startFollow && orb3Touching){
+            startCatchOrb(orb3, orb1Target);
         }
     }
 
+    /**
+    * If the player touches the orb, check which orb it is touching
+    */
      private void OnTriggerEnter2D(Collider2D collision) {
-        // if the player touches the orb, get the name of the orb, add it to the list, increment orbCount, delete the orb
-       if(collision.CompareTag("Orb1")) {
-            incrementCountChangeTextStartFollow(GameObject.Find("Orb 1"));
-            touching1 = true;
-        }
-        if(collision.CompareTag("Orb2")){
-            incrementCountChangeTextStartFollow(GameObject.Find("Orb 2"));
-            touching2 = true;
-        }
-        if(collision.CompareTag("Orb3")){
-            incrementCountChangeTextStartFollow(GameObject.Find("Orb 3"));
-            touching3 = true;
+        checkTouch(collision.CompareTag("Orb1"), orb1);
+        checkTouch(collision.CompareTag("Orb2"), orb2);
+        checkTouch(collision.CompareTag("Orb3"), orb3);
+    }
+
+    /**
+    * When the orb should start following the player (startFollow = true) and the player is touching the GameObject orb,
+    * method checks which orbs were collected in what order and determines the orb's target based on when it was collected.
+    * The target of the newly collected orb becomes the orb that was last collected (except for the first orb, whose target
+    * is the player). Then calls moveOrb.
+    */
+    private void startCatchOrb(GameObject orb, Transform orbTarget){
+        if(orbList[0].Equals(orb)){
+            orbTarget = playerTarget;
+            moveOrb(orb.GetComponent<Transform>(), orbTarget);
+        } else if(orbList[1].Equals(orb)){
+            orbTarget = orbList[0].GetComponent<Transform>();
+            moveOrb(orb.GetComponent<Transform>(), orbTarget);
+        } else if(orbList[2].Equals(orb)){
+            orbTarget = orbList[1].GetComponent<Transform>();
+            moveOrb(orb.GetComponent<Transform>(), orbTarget);
         }
     }
 
-    private void incrementCountChangeTextStartFollow(GameObject currentOrb){
+    /**
+    * Increments orb count, changes orb text to "count/3", and starts orb following the player
+    */
+    private void catchOrb(GameObject currentOrb){
         if(!orbList.Contains(currentOrb)){
             orbList.Add(currentOrb);
             currentOrb.tag = "OrbFound";
@@ -102,7 +87,35 @@ public class OrbScript : MonoBehaviour
         startFollow = true;
     }
 
-    private void moveOrb(Transform orb){
-        orb.position = Vector2.MoveTowards(orb.position, playerTarget.position, speed * Time.deltaTime);
+    /**
+    *  Updates orb position to follow the orb's target
+    */
+    private void moveOrb(Transform orb, Transform orbTarget){
+        if(Vector2.Distance(orb.position, orbTarget.position) > distance){
+                orb.position = Vector2.MoveTowards(orb.position, orbTarget.position, orbSpeed * Time.deltaTime);
+            }
+    }
+
+    /**
+    * Set the correct orb touch checker to true and catches the touched orb
+    */
+    private void checkTouch(bool tagCompare, GameObject orb){
+        if(tagCompare){
+            checkWhichTouch(orb);
+            catchOrb(orb);
+        }
+    }
+
+    /**
+    * Sets orb touching checker bool to true depending on which orb player touched when called
+    */
+    private void checkWhichTouch(GameObject orb){
+        if(orb.Equals(orb1)){
+            orb1Touching = true;
+        } else if(orb.Equals(orb2)){
+            orb2Touching = true;
+        } else if(orb.Equals(orb3)){
+            orb3Touching = true;
+        }
     }
 }
