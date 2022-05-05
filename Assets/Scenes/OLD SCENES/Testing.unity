@@ -33463,7 +33463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbText: {fileID: 1996165770}
   orbList: []
-  speed: 5
+  orbSpeed: 6
 --- !u!95 &1857379291
 Animator:
   serializedVersion: 3
@@ -33498,7 +33498,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   move_speed: 4
   jump_speed: 7
-  grounded: 0
   groundedChecker: {fileID: 2141988153}
   checkGroundRadius: 0.2
   groundLayer:

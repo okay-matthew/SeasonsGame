@@ -52,6 +52,7 @@ public class OrbDetector : MonoBehaviour
             if(Input.GetButtonDown("Submit")){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 levelCompleteText.text = "Level Complete";
+                Time.timeScale = 0;
             }
         }
     }

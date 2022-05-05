@@ -16384,8 +16384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 350, y: 80}
+  m_AnchoredPosition: {x: 3, y: 6}
+  m_SizeDelta: {x: 1021.7167, y: 201.7645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3877399145649736609
 CanvasRenderer:
@@ -16416,13 +16416,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 5d7e335a7320f44ba86f4d3154a7efc1, type: 3}
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
-    m_Alignment: 0
+    m_MaxSize: 150
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -22210,7 +22210,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   move_speed: 4
   jump_speed: 7
-  grounded: 0
   groundedChecker: {fileID: 2853994359522454657}
   checkGroundRadius: 0.2
   groundLayer:
