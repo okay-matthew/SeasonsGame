@@ -27,8 +27,8 @@ public class OrbScript : MonoBehaviour
         orb2 = GameObject.Find("Orb 2");
         orb3 = GameObject.Find("Orb 3");
         orb1Transform = orb1.GetComponent<Transform>();
-        orb2Transform = GameObject.Find("Orb 2").GetComponent<Transform>();
-        orb3Transform = GameObject.Find("Orb 3").GetComponent<Transform>();
+        orb2Transform = orb2.GetComponent<Transform>();
+        orb3Transform = orb3.GetComponent<Transform>();
         startFollow = false;
         orbCount = 0;
         orbText.text = "Orbs Collected: " + orbCount.ToString() + "/3";

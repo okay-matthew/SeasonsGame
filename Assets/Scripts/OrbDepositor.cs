@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /**
 * Manages everything to do with the orb depositor
 */
-public class OrbDetector : MonoBehaviour
+public class OrbDepositor : MonoBehaviour
 {
     private bool orbsDeposited;
     private bool touchingOrbDepositor;

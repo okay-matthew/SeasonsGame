@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 40160826}
   - component: {fileID: 40160828}
   - component: {fileID: 40160827}
-  - component: {fileID: 40160829}
   - component: {fileID: 40160830}
   m_Layer: 0
   m_Name: Orb 1
@@ -286,9 +285,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0015599912, y: 0}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.17081371
 --- !u!212 &40160824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5137,51 +5136,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &40160829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40160822}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd490d6eb5dd44fcb15dd94d3102c52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.022358092
-      outSlope: 0.022358092
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.95027035
-    - serializedVersion: 3
-      time: 1.5313056
-      value: 0.15185213
-      inSlope: 0.001266638
-      outSlope: 0.001266638
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.29921758
-    - serializedVersion: 3
-      time: 3.0349333
-      value: -0.00048532884
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 0
-    m_PostInfinity: 1
-    m_RotationOrder: 4
 --- !u!95 &40160830
 Animator:
   serializedVersion: 3
@@ -8906,10 +8860,10 @@ GameObject:
   m_Component:
   - component: {fileID: 201796442}
   - component: {fileID: 201796441}
-  - component: {fileID: 201796440}
   - component: {fileID: 201796439}
   - component: {fileID: 201796444}
   - component: {fileID: 201796443}
+  - component: {fileID: 201796440}
   m_Layer: 0
   m_Name: Orb Depositor
   m_TagString: Orb Depositor
@@ -13890,39 +13844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd490d6eb5dd44fcb15dd94d3102c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.022358092
-      outSlope: 0.022358092
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.95027035
-    - serializedVersion: 3
-      time: 1.007713
-      value: 0.30047026
-      inSlope: 0.00555736
-      outSlope: 0.00555736
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.328046
-    - serializedVersion: 3
-      time: 2.0005343
-      value: 0.00008723792
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 1
-    m_PostInfinity: 1
-    m_RotationOrder: 4
 --- !u!213 &339324439
 Sprite:
   m_ObjectHideFlags: 0
@@ -17645,9 +17566,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.002485422}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.158685
 --- !u!212 &775826710
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17707,7 +17628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775826708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.51, y: 1.49, z: 0}
+  m_LocalPosition: {x: 1.498, y: 1.49, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -28511,9 +28432,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0012846636}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.15971546
 --- !u!212 &1571823471
 SpriteRenderer:
   m_ObjectHideFlags: 0
