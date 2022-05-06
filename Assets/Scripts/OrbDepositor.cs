@@ -9,10 +9,10 @@ using UnityEngine.SceneManagement;
 */
 public class OrbDepositor : MonoBehaviour
 {
-    private bool orbsDeposited;
-    private bool touchingOrbDepositor;
-    public Image enterKey;
-    public Text levelCompleteText;
+    private bool orbsDeposited; // true after player presses enter and orbs have been deposited
+    private bool touchingOrbDepositor; // true when player is colliding with orb depositor
+    public Image enterKey; // image that indicates to press enter when touching orb depositor
+    public Text levelCompleteText; // text that indicates completed level
 
 
 
@@ -44,15 +44,15 @@ public class OrbDepositor : MonoBehaviour
     }
 
     /**
-    * Checks whether the player has found all the orbs and is touching the depositor, if so allows the user to deposit the orbs
+    * Checks whether the player has found all the orbs and is touching the depositor, if so allows the user to deposit the orbs and ends level
     */
     private void CheckOrbsDeposited() {
         if(touchingOrbDepositor && GameObject.FindGameObjectsWithTag("OrbFound").Length == 3){    
             enterKey.enabled = true;
             if(Input.GetButtonDown("Submit")){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loads next scene
                 levelCompleteText.text = "Level Complete";
-                Time.timeScale = 0;
+                Time.timeScale = 0; // Stops player from moving after winning level
             }
         }
     }
