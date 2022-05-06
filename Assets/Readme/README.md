@@ -15,13 +15,18 @@ Windows and MacOS.
 
 ## Required Software
 
-* SeasonsGame.exe file. 
+* Seasons.exe file. 
 
 ## Setup
 
-* Download SeasonsGame.zip
+* Download Seasons.zip
 * Unzip the .zip
-* Run the SeasonsGame.exe file in the folder
+
+If Windows:
+* Run the SeasonsGame.exe file in the folder. It should be right there.
+
+If Mac: 
+* Run SeasonsGame
 
 ## Controls
 
@@ -36,9 +41,8 @@ Other:
 * return : finish level after collecting orbs
 * r : restart the level
 
-
-## References 
-
 ## Bugs
-* Bounce flower, if run at and press jump on the right frame, will launch the player high. This is fairly difficult to achieve on accident, though not impossible.
-* The background is a little small. If the player jumps far off the edge, they might see the edge of the background. This is also a little difficult to achieve on accident, but not impossible. 
+* The bounce flower, if ran at while pressing jump on the right frame, will launch the player very high. This is fairly difficult to achieve on accident, though not impossible.
+* The player likes to bob its head in the first level. 
+* 
+

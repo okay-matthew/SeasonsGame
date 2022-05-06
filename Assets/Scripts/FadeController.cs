@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class UIController : MonoBehaviour
+/* 
+    Controls the the screen fade. Help from 
+    https://turbofuture.com/graphic-design-video/How-to-Fade-to-Black-in-Unity#:~:text=In%20Unity%2C%20go%20to%20Assets,Voila.
+*/
+public class FadeController : MonoBehaviour
 {
     [SerializeField]
     public GameObject fadeImage;
@@ -16,6 +19,7 @@ public class UIController : MonoBehaviour
         .GetComponent<Image>().color;
     }
 
+    /* Enum to control fade */
     public IEnumerator FadeOutEnum(bool fadeTo = true, int fadeSpeed = 5) 
     {
         float fadeAmount;
@@ -45,6 +49,9 @@ public class UIController : MonoBehaviour
         }
     }
 
+    /*
+        Following methods allow for access to the fade.
+    */
     public void FadeIn() {
         StartCoroutine(FadeOutEnum(false));
     }

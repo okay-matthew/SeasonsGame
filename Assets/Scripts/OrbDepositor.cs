@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 /**
-* Manages everything to do with the orb depositor
+* Manages everything to do with the orb depositor. 
 */
 public class OrbDepositor : MonoBehaviour
 {
@@ -14,14 +14,14 @@ public class OrbDepositor : MonoBehaviour
     public Image enterKey; // image that indicates to press enter when touching orb depositor
     public Text levelCompleteText; // text that indicates completed level
 
-    private UIController whiteOutScript;  
+    private FadeController whiteOutScript;  
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        whiteOutScript = GameObject.Find("FadeToWhite").GetComponent<UIController>();
+        whiteOutScript = GameObject.Find("FadeToWhite").GetComponent<FadeController>();
         touchingOrbDepositor = false;
         levelCompleteText.text = "";
         enterKey.enabled = false;

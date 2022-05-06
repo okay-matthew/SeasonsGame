@@ -15,7 +15,7 @@ public class Shrine : MonoBehaviour
     [SerializeField]
     private MapManager mapManager;
     
-    private UIController whiteOutScript; //script for fade transition
+    private FadeController whiteOutScript; //script for fade transition
 
     private PlayerMovement playerScript;
     private bool atShrine = false;
@@ -24,7 +24,7 @@ public class Shrine : MonoBehaviour
 
     void Start() {
         spaceKey.enabled = false;
-        whiteOutScript = GameObject.Find("FadeToWhite").GetComponent<UIController>();
+        whiteOutScript = GameObject.Find("FadeToWhite").GetComponent<FadeController>();
         playerScript = GameObject.Find("Agate").GetComponent<PlayerMovement>();
     }
 
