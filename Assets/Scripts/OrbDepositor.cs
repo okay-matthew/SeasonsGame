@@ -52,7 +52,6 @@ public class OrbDepositor : MonoBehaviour
             if(Input.GetButtonDown("Submit")){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loads next scene
                 levelCompleteText.text = "Level Complete";
-                Time.timeScale = 0; // Stops player from moving after winning level
             }
         }
     }

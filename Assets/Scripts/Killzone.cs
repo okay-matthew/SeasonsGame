@@ -10,9 +10,6 @@ using UnityEngine.SceneManagement;
 public class Killzone : MonoBehaviour
 {
 
-    [SerializeField]
-    private Tilemap terrain, background, backgroundObjects;
-    
     private bool inKillzone = false;
 
     void Update() {

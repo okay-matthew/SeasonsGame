@@ -12,7 +12,7 @@ public class SceneChange : MonoBehaviour
 {
     public void LoadGame() 
     {
-        SceneManager.LoadScene("level-0");
+        SceneManager.LoadScene("level-1");
     }
 
     public void QuitGame() 
