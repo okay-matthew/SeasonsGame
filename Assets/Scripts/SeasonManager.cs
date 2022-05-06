@@ -25,7 +25,7 @@ public class SeasonManager : MonoBehaviour
     }
 
     void Awake() {
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
 
     /*
