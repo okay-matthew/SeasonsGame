@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
         .GetComponent<Image>().color;
     }
 
-    public IEnumerator FadeOut(bool fadeTo = true, int fadeSpeed = 5) 
+    public IEnumerator FadeOutEnum(bool fadeTo = true, int fadeSpeed = 5) 
     {
         float fadeAmount;
 
@@ -45,12 +45,12 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void FadeInBlack() {
-        StartCoroutine(FadeOut(false));
+    public void FadeIn() {
+        StartCoroutine(FadeOutEnum(false));
     }
 
-    public void FadeOutBlack() {
-        StartCoroutine(FadeOut());
+    public void FadeOut() {
+        StartCoroutine(FadeOutEnum());
     }
 
 }

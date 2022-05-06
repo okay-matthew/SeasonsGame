@@ -14,11 +14,14 @@ public class OrbDepositor : MonoBehaviour
     public Image enterKey; // image that indicates to press enter when touching orb depositor
     public Text levelCompleteText; // text that indicates completed level
 
+    private UIController whiteOutScript;  
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        whiteOutScript = GameObject.Find("FadeToWhite").GetComponent<UIController>();
         touchingOrbDepositor = false;
         levelCompleteText.text = "";
         enterKey.enabled = false;
@@ -50,8 +53,10 @@ public class OrbDepositor : MonoBehaviour
         if(touchingOrbDepositor && GameObject.FindGameObjectsWithTag("OrbFound").Length == 3){    
             enterKey.enabled = true;
             if(Input.GetButtonDown("Submit")){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loads next scene
-                levelCompleteText.text = "Level Complete";
+                 // loads next scene
+                StartCoroutine(LevelTransition());
+                
+
             }
         }
     }
@@ -64,5 +69,19 @@ public class OrbDepositor : MonoBehaviour
             touchingOrbDepositor = false;
             enterKey.enabled = false;
         }
+    }
+
+    /*
+    Times out events of level transition
+    */
+    IEnumerator LevelTransition() {
+        
+        levelCompleteText.text = "Level Complete"; //shows text
+        yield return new WaitForSeconds(1f);
+
+        whiteOutScript.FadeOut();   //Fades out after a second
+        yield return new WaitForSeconds(1f); //waits
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //loads next scene
     }
 }

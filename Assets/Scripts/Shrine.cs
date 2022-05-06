@@ -71,12 +71,12 @@ public class Shrine : MonoBehaviour
     IEnumerator SeasonTransition() {
         playerScript.unpaused = false;
         playerScript.rb.velocity = new Vector2(0, 0); // removes glitch where player 'slides' on ground when space is pressed near shrine
-        whiteOutScript.FadeOutBlack();                // while moving. Sometimes this would cause players to slide off edge.
+        whiteOutScript.FadeOut();                // while moving. Sometimes this would cause players to slide off edge.
         yield return new WaitForSeconds(1f);
         
         SeasonChange();
         playerScript.unpaused = true;
-        whiteOutScript.FadeInBlack();
+        whiteOutScript.FadeIn();
     }
 
 }
