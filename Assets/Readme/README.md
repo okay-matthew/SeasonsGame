@@ -5,9 +5,9 @@ Seasons was created using Unity Engine and C#. This is a project for the Softwar
 
 ## Authors
 
-* **Nicole Branch** 
-* **Antonio Solis**
-* **Matthew Trager**
+* **Nicole Branch** GitHub: nbranch23
+* **Antonio Solis** GitHub: asolis25
+* **Matthew Trager** GitHub: okay-matthew
 
 ## Compatability
 
@@ -34,8 +34,11 @@ Arrow keys:
 Other:
 * space key : change season (while near shrine)
 * return : finish level after collecting orbs
+* r : restart the level
 
 
 ## References 
 
 ## Bugs
+* Bounce flower, if run at and press jump on the right frame, will launch the player high. This is fairly difficult to achieve on accident, though not impossible.
+* The background is a little small. If the player jumps far off the edge, they might see the edge of the background. This is also a little difficult to achieve on accident, but not impossible. 
