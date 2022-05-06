@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 
+/*
+    Script for changing the scenes.
+*/
+
 {
     public void LoadGame() 
     {
-        SceneManager.LoadScene("testing");
+        SceneManager.LoadScene("level-0");
     }
 
     public void QuitGame() 
