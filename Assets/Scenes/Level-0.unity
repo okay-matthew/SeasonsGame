@@ -1842,9 +1842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4ac660e7bb3a64ea46edab91ae3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain: {fileID: 0}
-  background: {fileID: 0}
-  backgroundObjects: {fileID: 0}
 --- !u!212 &744566694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1968,9 +1965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f4ac660e7bb3a64ea46edab91ae3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain: {fileID: 0}
-  background: {fileID: 0}
-  backgroundObjects: {fileID: 0}
 --- !u!212 &800067883
 SpriteRenderer:
   m_ObjectHideFlags: 0
